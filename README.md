@@ -64,7 +64,26 @@ A modern, feature-rich Neovim configuration built with Lua, focusing on develope
 - ripgrep (for Telescope live grep)
 - Node.js (for LSP servers)
 
-### Quick Install
+### Installation Options
+
+#### Option 1: Download as ZIP (Recommended for trying out)
+
+1. **Backup existing configuration** (if any):
+   ```bash
+   mv ~/.config/nvim ~/.config/nvim.backup
+   ```
+
+2. **Download the configuration**:
+   - Click the green "Code" button on GitHub
+   - Select "Download ZIP"
+   - Extract the ZIP file to `~/.config/nvim`
+
+3. **Start Neovim**:
+   ```bash
+   nvim
+   ```
+
+#### Option 2: Git Clone (For advanced users)
 
 1. **Backup existing configuration** (if any):
    ```bash
@@ -73,7 +92,7 @@ A modern, feature-rich Neovim configuration built with Lua, focusing on develope
 
 2. **Clone this configuration**:
    ```bash
-   git clone <your-repo-url> ~/.config/nvim
+   git clone https://github.com/airfelixx/icarus-nvimconfig.git ~/.config/nvim
    ```
 
 3. **Start Neovim**:
@@ -109,9 +128,102 @@ A modern, feature-rich Neovim configuration built with Lua, focusing on develope
 
 ## ⌨️ Key Mappings
 
-Key mappings are configured in [`lua/basicConfig/keymap.lua`](lua/basicConfig/keymap.lua). Some common mappings include:
+### General Navigation
+| Key | Mode | Action |
+|-----|------|--------|
+| `<Space>` | Normal | Leader key |
+| `<C-h>` | Normal | Move to left window |
+| `<C-j>` | Normal | Move to bottom window |
+| `<C-k>` | Normal | Move to top window |
+| `<C-l>` | Normal | Move to right window |
+| `<C-Up>` | Normal | Resize window up |
+| `<C-Down>` | Normal | Resize window down |
+| `<C-Left>` | Normal | Resize window left |
+| `<C-Right>` | Normal | Resize window right |
 
-> **Note**: Refer to the keymap.lua file for complete key binding configurations.
+### File Operations
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>pv` | Normal | Open file explorer |
+
+### Telescope (Fuzzy Finder)
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>pf` | Normal | Find files |
+| `<C-p>` | Normal | Find files in git repository |
+| `<leader>ps` | Normal | Live grep search |
+
+### Harpoon (Quick File Navigation)
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>a` | Normal | Add file to harpoon |
+| `<C-e>` | Normal | Toggle harpoon quick menu |
+| `<C-h>` | Normal | Navigate to harpoon file 1 |
+| `<C-t>` | Normal | Navigate to harpoon file 2 |
+| `<C-n>` | Normal | Navigate to harpoon file 3 |
+| `<C-s>` | Normal | Navigate to harpoon file 4 |
+
+### LSP (Language Server Protocol)
+| Key | Mode | Action |
+|-----|------|--------|
+| `gd` | Normal | Go to definition |
+| `K` | Normal | Hover information |
+| `<leader>vws` | Normal | Workspace symbol search |
+| `<leader>vd` | Normal | Open diagnostics float |
+| `[d` | Normal | Go to next diagnostic |
+| `]d` | Normal | Go to previous diagnostic |
+| `<leader>vca` | Normal | Code action |
+| `<leader>vrr` | Normal | References |
+| `<leader>vrn` | Normal | Rename symbol |
+| `<C-h>` | Insert | Signature help |
+
+### Undo Tree
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>u` | Normal | Toggle undo tree |
+
+### Git Signs
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>gp` | Normal | Preview hunk |
+| `<leader>gb` | Normal | Blame line |
+
+### Terminal
+| Key | Mode | Action |
+|-----|------|--------|
+| `<C-\>` | Normal/Insert/Terminal | Toggle terminal |
+
+### Text Manipulation
+| Key | Mode | Action |
+|-----|------|--------|
+| `J` | Visual | Move selected text down |
+| `K` | Visual | Move selected text up |
+| `J` | Normal | Join lines and keep cursor position |
+| `<C-d>` | Normal | Half page down and center cursor |
+| `<C-u>` | Normal | Half page up and center cursor |
+| `n` | Normal | Next search result and center cursor |
+| `N` | Normal | Previous search result and center cursor |
+
+### Clipboard Operations
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>y` | Normal/Visual | Yank to system clipboard |
+| `<leader>Y` | Normal | Yank line to system clipboard |
+| `<leader>d` | Normal/Visual | Delete without affecting clipboard |
+
+### Miscellaneous
+| Key | Mode | Action |
+|-----|------|--------|
+| `Q` | Normal | Disabled (no-op) |
+| `<C-f>` | Normal | Silent tmux sessionizer |
+| `<leader>f` | Normal | Format buffer with LSP |
+| `<C-k>` | Normal | Next item in quickfix list |
+| `<C-j>` | Normal | Previous item in quickfix list |
+| `<leader>k` | Normal | Next item in location list |
+| `<leader>j` | Normal | Previous item in location list |
+| `<leader>s` | Normal | Search and replace word under cursor |
+
+> **Note**: `<leader>` is mapped to the spacebar. For complete and up-to-date key mappings, refer to [`lua/basicConfig/keymap.lua`](lua/basicConfig/keymap.lua).
 
 ## 🎨 Customization
 
@@ -157,10 +269,6 @@ Language server settings are in [`lua/plug/lsp/`](lua/plug/lsp/):
 ## 📝 License
 
 This configuration is open source and available under the MIT License.
-
-## 🤝 Contributing
-
-Feel free to fork this configuration and make it your own! If you have improvements or fixes, pull requests are welcome.
 
 ---
 
