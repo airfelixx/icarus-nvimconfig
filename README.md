@@ -128,100 +128,109 @@ A modern, feature-rich Neovim configuration built with Lua, focusing on develope
 
 ## ⌨️ Key Mappings
 
-### General Navigation
+### General Operations
 | Key | Mode | Action |
 |-----|------|--------|
 | `<Space>` | Normal | Leader key |
-| `<C-h>` | Normal | Move to left window |
-| `<C-j>` | Normal | Move to bottom window |
-| `<C-k>` | Normal | Move to top window |
-| `<C-l>` | Normal | Move to right window |
-| `<C-Up>` | Normal | Resize window up |
-| `<C-Down>` | Normal | Resize window down |
-| `<C-Left>` | Normal | Resize window left |
-| `<C-Right>` | Normal | Resize window right |
+| `<C-s>` | Normal | Save file |
+| `<leader>pv` | Normal | Open file explorer |
 
-### File Operations
+### Treesitter Text Objects
 | Key | Mode | Action |
 |-----|------|--------|
-| `<leader>pv` | Normal | Open file explorer |
+| `<leader>af` | Normal/Visual | Select around function |
+| `<leader>if` | Normal/Visual | Select inside function |
+| `<leader>ac` | Normal/Visual | Select around class |
+| `<leader>ic` | Normal/Visual | Select inside class |
 
 ### Telescope (Fuzzy Finder)
 | Key | Mode | Action |
 |-----|------|--------|
-| `<leader>pf` | Normal | Find files |
-| `<C-p>` | Normal | Find files in git repository |
-| `<leader>ps` | Normal | Live grep search |
+| `<leader>ff` | Normal | Find files |
+| `<leader>fg` | Normal | Live grep search |
+| `<leader>fb` | Normal | Search buffers |
 
 ### Harpoon (Quick File Navigation)
 | Key | Mode | Action |
 |-----|------|--------|
 | `<leader>a` | Normal | Add file to harpoon |
-| `<C-e>` | Normal | Toggle harpoon quick menu |
+| `<C-e>` | Normal | Toggle harpoon menu (with Telescope UI) |
 | `<C-h>` | Normal | Navigate to harpoon file 1 |
-| `<C-t>` | Normal | Navigate to harpoon file 2 |
-| `<C-n>` | Normal | Navigate to harpoon file 3 |
-| `<C-s>` | Normal | Navigate to harpoon file 4 |
+| `<C-j>` | Normal | Navigate to harpoon file 2 |
+| `<C-k>` | Normal | Navigate to harpoon file 3 |
+| `<C-l>` | Normal | Navigate to harpoon file 4 |
 
-### LSP (Language Server Protocol)
+### Comment Operations
 | Key | Mode | Action |
 |-----|------|--------|
+| `gcc` | Normal | Toggle line comment on current line |
+| `gbc` | Normal | Toggle block comment on current line |
+| `gc{motion}` | Normal | Comment using motion (e.g., `gc3j` for 3 lines down) |
+| `gb{motion}` | Normal | Block comment using motion |
+| `gco` | Normal | Add comment line below current line |
+| `gcO` | Normal | Add comment line above current line |
+| `gcA` | Normal | Add comment at end of current line |
+| `gc` | Visual | Toggle line comment on selection |
+| `gb` | Visual | Toggle block comment on selection |
+
+### Git Operations (GitSigns)
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>gp` | Normal | Preview Git hunk |
+| `<leader>gt` | Normal | Toggle Git blame for current line |
+| `<leader>gs` | Normal | Stage Git hunk |
+| `<leader>gr` | Normal | Reset Git hunk |
+| `]h` | Normal | Go to next Git hunk |
+| `[h` | Normal | Go to previous Git hunk |
+
+### LSP (Language Server Protocol)
+#### Global LSP Commands
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>e` | Normal | Show diagnostic details |
+| `[d` | Normal | Go to previous diagnostic |
+| `]d` | Normal | Go to next diagnostic |
+| `<leader>q` | Normal | Open diagnostic quickfix list |
+
+#### Buffer-specific LSP Commands (when LSP is attached)
+| Key | Mode | Action |
+|-----|------|--------|
+| `gD` | Normal | Go to declaration |
 | `gd` | Normal | Go to definition |
-| `K` | Normal | Hover information |
-| `<leader>vws` | Normal | Workspace symbol search |
-| `<leader>vd` | Normal | Open diagnostics float |
-| `[d` | Normal | Go to next diagnostic |
-| `]d` | Normal | Go to previous diagnostic |
-| `<leader>vca` | Normal | Code action |
-| `<leader>vrr` | Normal | References |
-| `<leader>vrn` | Normal | Rename symbol |
-| `<C-h>` | Insert | Signature help |
+| `K` | Normal | Show hover documentation |
+| `gi` | Normal | Go to implementation |
+| `<C-k>` | Normal | Show signature help |
+| `<leader>wa` | Normal | Add workspace folder |
+| `<leader>wr` | Normal | Remove workspace folder |
+| `<leader>wl` | Normal | List workspace folders |
+| `<leader>D` | Normal | Go to type definition |
+| `<leader>rn` | Normal | Rename symbol |
+| `<leader>ca` | Normal/Visual | Code actions |
+| `gr` | Normal | Find references |
+| `<leader>f` | Normal | Format buffer |
+
+### Terminal (ToggleTerm)
+#### Normal Mode
+| Key | Mode | Action |
+|-----|------|--------|
+| `<C-\>` | Normal | Toggle default terminal |
+| `<leader>tf` | Normal | Toggle floating terminal |
+| `<leader>th` | Normal | Toggle horizontal terminal |
+| `<leader>tv` | Normal | Toggle vertical terminal |
+
+#### Terminal Mode
+| Key | Mode | Action |
+|-----|------|--------|
+| `<C-\>` | Terminal | Exit terminal and close |
+| `<C-h>` | Terminal | Move to left window |
+| `<C-j>` | Terminal | Move to window below |
+| `<C-k>` | Terminal | Move to window above |
+| `<C-l>` | Terminal | Move to right window |
 
 ### Undo Tree
 | Key | Mode | Action |
 |-----|------|--------|
 | `<leader>u` | Normal | Toggle undo tree |
-
-### Git Signs
-| Key | Mode | Action |
-|-----|------|--------|
-| `<leader>gp` | Normal | Preview hunk |
-| `<leader>gb` | Normal | Blame line |
-
-### Terminal
-| Key | Mode | Action |
-|-----|------|--------|
-| `<C-\>` | Normal/Insert/Terminal | Toggle terminal |
-
-### Text Manipulation
-| Key | Mode | Action |
-|-----|------|--------|
-| `J` | Visual | Move selected text down |
-| `K` | Visual | Move selected text up |
-| `J` | Normal | Join lines and keep cursor position |
-| `<C-d>` | Normal | Half page down and center cursor |
-| `<C-u>` | Normal | Half page up and center cursor |
-| `n` | Normal | Next search result and center cursor |
-| `N` | Normal | Previous search result and center cursor |
-
-### Clipboard Operations
-| Key | Mode | Action |
-|-----|------|--------|
-| `<leader>y` | Normal/Visual | Yank to system clipboard |
-| `<leader>Y` | Normal | Yank line to system clipboard |
-| `<leader>d` | Normal/Visual | Delete without affecting clipboard |
-
-### Miscellaneous
-| Key | Mode | Action |
-|-----|------|--------|
-| `Q` | Normal | Disabled (no-op) |
-| `<C-f>` | Normal | Silent tmux sessionizer |
-| `<leader>f` | Normal | Format buffer with LSP |
-| `<C-k>` | Normal | Next item in quickfix list |
-| `<C-j>` | Normal | Previous item in quickfix list |
-| `<leader>k` | Normal | Next item in location list |
-| `<leader>j` | Normal | Previous item in location list |
-| `<leader>s` | Normal | Search and replace word under cursor |
 
 > **Note**: `<leader>` is mapped to the spacebar. For complete and up-to-date key mappings, refer to [`lua/basicConfig/keymap.lua`](lua/basicConfig/keymap.lua).
 
