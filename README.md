@@ -155,10 +155,10 @@ A modern, feature-rich Neovim configuration built with Lua, focusing on develope
 |-----|------|--------|
 | `<leader>a` | Normal | Add file to harpoon |
 | `<C-e>` | Normal | Toggle harpoon menu (with Telescope UI) |
-| `<A-h>` | Normal | Navigate to harpoon file 1 |
-| `<A-j>` | Normal | Navigate to harpoon file 2 |
-| `<A-k>` | Normal | Navigate to harpoon file 3 |
-| `<A-l>` | Normal | Navigate to harpoon file 4 |
+| `<C-1>` | Normal | Navigate to harpoon file 1 |
+| `<C-2>` | Normal | Navigate to harpoon file 2 |
+| `<C-3>` | Normal | Navigate to harpoon file 3 |
+| `<C-4>` | Normal | Navigate to harpoon file 4 |
 
 ### Comment Operations
 | Key | Mode | Action |
