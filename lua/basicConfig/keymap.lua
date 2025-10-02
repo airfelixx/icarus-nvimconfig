@@ -35,10 +35,10 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 
 vim.keymap.set("n", "<leader>a", function() require("harpoon"):list():add() end, { desc = "Add to harpoon" })                  -- Leader+a : Add current file to harpoon
 vim.keymap.set("n", "<C-e>", function() _G.harpoon_telescope() end, { desc = "Open harpoon with telescope" })                  -- Ctrl+e : Open harpoon menu with Telescope UI
-vim.keymap.set("n", "<C-h>", function() require("harpoon"):list():select(1) end, { desc = "Go to harpoon file 1" })            -- Ctrl+h : Go to harpoon file 1
-vim.keymap.set("n", "<C-j>", function() require("harpoon"):list():select(2) end, { desc = "Go to harpoon file 2" })            -- Ctrl+j : Go to harpoon file 2
-vim.keymap.set("n", "<C-k>", function() require("harpoon"):list():select(3) end, { desc = "Go to harpoon file 3" })            -- Ctrl+k : Go to harpoon file 3
-vim.keymap.set("n", "<C-l>", function() require("harpoon"):list():select(4) end, { desc = "Go to harpoon file 4" })            -- Ctrl+l : Go to harpoon file 4
+vim.keymap.set("n", "<A-h>", function() require("harpoon"):list():select(1) end, { desc = "Go to harpoon file 1" })            -- Alt+h : Go to harpoon file 1
+vim.keymap.set("n", "<A-j>", function() require("harpoon"):list():select(2) end, { desc = "Go to harpoon file 2" })            -- Alt+j : Go to harpoon file 2
+vim.keymap.set("n", "<A-k>", function() require("harpoon"):list():select(3) end, { desc = "Go to harpoon file 3" })            -- Alt+k : Go to harpoon file 3
+vim.keymap.set("n", "<A-l>", function() require("harpoon"):list():select(4) end, { desc = "Go to harpoon file 4" })            -- Alt+l : Go to harpoon file 4
 
 -- Comment Keymaps (Provided by Comment.nvim plugin)
 
